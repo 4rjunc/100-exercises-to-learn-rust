@@ -1,12 +1,12 @@
 mod ticket {
-    struct Ticket {
-        title: String,
-        description: String,
-        status: String,
+    pub struct Ticket {
+        pub title: String,
+        pub description: String,
+        pub status: String,
     }
 
     impl Ticket {
-        fn new(title: String, description: String, status: String) -> Ticket {
+        pub fn new(title: String, description: String, status: String) -> Ticket {
             if title.is_empty() {
                 panic!("Title cannot be empty");
             }
@@ -38,7 +38,7 @@ mod ticket {
 mod tests {
     // TODO: Add the necessary `pub` modifiers in the parent module to remove the compiler
     //  errors about the use statement below.
-    use super::ticket::Ticket;
+    use crate::ticket::Ticket;
 
     // Be careful though! We don't want this function to compile after you have changed
     // visibility to make the use statement compile!
